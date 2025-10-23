@@ -724,8 +724,12 @@
     </div>
 
     <script>
-        // If token is present in URL (fallback from login), store it to localStorage
-        (function() {
+    // Ensure auth vars exist before any assignment to avoid TDZ errors
+    let authToken = '';
+    let currentUserRole = '';
+
+    // If token is present in URL (fallback from login), store it to localStorage
+    (function() {
             try {
                 const params = new URLSearchParams(window.location.search);
                 const tokenParam = params.get('token');
@@ -752,15 +756,15 @@
             authToken = savedToken;
             currentUserRole = localStorage.getItem('userRole') || '';
             applyRoleVisibility();
+            // show dashboard and load data
+            document.getElementById('dashboardPage')?.classList.add('active');
             loadDashboardData();
             document.getElementById('loginPage')?.remove?.();
         }
-        const API_URL = 'http://localhost:5000/api';
-        let allStudents = [];
-        let allPrograms = [];
-        let allDepartments = [];
-        let authToken = '';
-        let currentUserRole = '';
+    const API_URL = 'http://localhost:5000/api';
+    let allStudents = [];
+    let allPrograms = [];
+    let allDepartments = [];
 
         // Login
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
