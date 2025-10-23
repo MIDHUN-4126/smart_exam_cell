@@ -13,7 +13,9 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
-            background-color: #f9fafb;
+            background: linear-gradient(180deg, #fff7fb 0%, #eef2ff 50%, #fff8f3 100%);
+            color: #071028;
+            -webkit-font-smoothing:antialiased;
         }
 
         /* Login Page */
@@ -26,12 +28,13 @@
         }
 
         .login-box {
-            background: white;
+            background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,250,255,0.94));
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 18px;
+            box-shadow: 0 18px 60px rgba(14,165,233,0.12);
             width: 100%;
-            max-width: 400px;
+            max-width: 980px;
+            display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center
         }
 
         .login-header {
@@ -40,9 +43,10 @@
         }
 
         .login-header h1 {
-            font-size: 28px;
+            font-size: 30px;
             margin-bottom: 10px;
-            color: #1f2937;
+            color: #111827;
+            letter-spacing: -0.2px;
         }
 
         .login-header p {
@@ -76,19 +80,19 @@
 
         .btn {
             width: 100%;
-            padding: 12px;
-            background: #3b82f6;
+            padding: 12px 18px;
+            background: linear-gradient(90deg,#0ea5e9,#7c3aed,#ff0066);
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 14px;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 800;
             cursor: pointer;
+            box-shadow: 0 24px 60px rgba(124,58,237,0.16);
+            transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
         }
 
-        .btn:hover {
-            background: #2563eb;
-        }
+        .btn:hover{transform:translateY(-4px) scale(1.01);box-shadow:0 30px 80px rgba(124,58,237,0.2);filter:brightness(1.03)}
 
         .demo-credentials {
             margin-top: 20px;
@@ -104,33 +108,17 @@
         }
 
         /* Dashboard */
-        .dashboard {
-            display: none;
-        }
+    .dashboard {display:none}
+    .dashboard.active{display:flex;height:calc(100vh - 48px);gap:20px}
 
-        .dashboard.active {
-            display: flex;
-            height: 100vh;
-        }
-
-        .sidebar {
-            width: 260px;
-            background: white;
-            border-right: 1px solid #e5e7eb;
-            display: flex;
-            flex-direction: column;
-        }
+    .sidebar{width:320px;background:linear-gradient(180deg,#fff,#fff2fb);border-radius:16px;padding:20px;box-shadow:0 30px 80px rgba(124,58,237,0.08)}
 
         .sidebar-header {
             padding: 20px;
             border-bottom: 1px solid #e5e7eb;
         }
 
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #3b82f6;
-        }
+    .logo{font-size:22px;font-weight:900;color:#ff0077;letter-spacing:-0.4px}
 
         .sidebar-menu {
             flex: 1;
@@ -138,22 +126,9 @@
             overflow-y: auto;
         }
 
-        .menu-item {
-            padding: 10px 15px;
-            margin-bottom: 5px;
-            border-radius: 6px;
-            cursor: pointer;
-            color: #6b7280;
-        }
-
-        .menu-item:hover {
-            background: #f3f4f6;
-        }
-
-        .menu-item.active {
-            background: #3b82f6;
-            color: white;
-        }
+    .menu-item{padding:12px 14px;margin-bottom:10px;border-radius:12px;cursor:pointer;color:#2b3654;font-weight:800}
+    .menu-item:hover{background:linear-gradient(90deg, rgba(14,165,233,0.12), rgba(124,58,237,0.06));transform:translateX(6px);color:#0ea5e9}
+    .menu-item.active{background:linear-gradient(90deg,#ff0077,#7c3aed);color:white}
 
         .main-content {
             flex: 1;
@@ -200,37 +175,12 @@
             margin-bottom: 30px;
         }
 
-        .stat-card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
+    .stat-card{padding:18px;border-radius:14px;color:#08122a;background:linear-gradient(135deg,#fff0f6,#f0f9ff);box-shadow:0 30px 80px rgba(255,0,119,0.06)}
+    .stat-card h3{font-size:13px;color:#374151;margin:0;font-weight:700}
+    .stat-card .value{font-size:30px;font-weight:900;margin-top:8px;background:linear-gradient(90deg,#ff0077,#06b6d4,#7c3aed);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .stat-card .label{font-size:12px;color:#ff0077;font-weight:800}
 
-        .stat-card h3 {
-            color: #6b7280;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .stat-card .value {
-            font-size: 32px;
-            font-weight: bold;
-            color: #1f2937;
-        }
-
-        .stat-card .label {
-            color: #10b981;
-            font-size: 13px;
-            margin-top: 5px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
+    .card{background:linear-gradient(180deg,#ffffff,#fff7f3);border-radius:14px;margin-bottom:20px;box-shadow:0 30px 80px rgba(255,0,119,0.06)}
 
         .card-header {
             padding: 20px;
@@ -249,42 +199,14 @@
             padding: 20px;
         }
 
-        .btn-primary {
-            padding: 10px 20px;
-            background: #3b82f6;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+    .btn-primary{padding:10px 18px;background:linear-gradient(90deg,#ff7a00,#ff0077);color:white;border-radius:12px;border:none;font-weight:900;box-shadow:0 16px 48px rgba(255,122,0,0.12)}
+    .btn-primary:hover{transform:translateY(-3px) scale(1.02)}
 
-        .btn-primary:hover {
-            background: #2563eb;
-        }
+    .btn-danger{padding:8px 12px;background:linear-gradient(90deg,#ff416c,#ff7a00);color:white;border-radius:10px;border:none;font-weight:800}
 
-        .btn-danger {
-            padding: 8px 12px;
-            background: #ef4444;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-        }
+        table{width:100%;border-collapse:collapse;background:transparent}
 
-        .btn-danger:hover {
-            background: #dc2626;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        thead {
-            background: #f9fafb;
-        }
+    thead{background:linear-gradient(90deg,#fff3f6,#f8fafc)}
 
         th {
             padding: 12px;
@@ -313,37 +235,13 @@
             font-weight: 600;
         }
 
-        .badge-success {
-            background: #d1fae5;
-            color: #065f46;
-        }
+    .badge-success{background:linear-gradient(90deg,#d1fae5,#bff1e0);color:#065f46;padding:6px 12px;border-radius:999px;font-weight:800}
 
         /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-        }
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(3,7,18,0.5),rgba(3,7,18,0.4));z-index:1000}
+    .modal.active{display:flex;align-items:center;justify-content:center}
 
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 600px;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
+    .modal-content{background:linear-gradient(180deg,#fff,#fffdf6);border-radius:16px;width:92%;max-width:840px;max-height:90vh;overflow:auto;box-shadow:0 40px 110px rgba(3,7,18,0.16);padding:6px}
 
         .modal-header {
             padding: 20px;
@@ -403,37 +301,7 @@
     </style>
 </head>
 <body>
-    <!-- Login Page -->
-    <div id="loginPage" class="login-container">
-        <div class="login-box">
-            <div class="login-header">
-                <div style="display:flex; align-items:center; gap:12px; justify-content:center;">
-                    <img src="/static/kct-logo.svg" alt="KCT Logo" style="height:56px; width:auto; border-radius:6px;" />
-                    <div style="text-align:left;">
-                        <h1 style="margin:0; font-size:20px;">College Management</h1>
-                        <p style="margin:0; font-size:13px; color:#6b7280;">Examination Records System</p>
-                    </div>
-                </div>
-            </div>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" id="loginEmail" value="admin@college.edu" required>
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" id="loginPassword" value="admin123" required>
-                </div>
-                <button type="submit" class="btn">Sign In</button>
-            </form>
-            <div class="demo-credentials">
-                <p><strong>Demo Credentials:</strong></p>
-                <p>Admin: admin@college.edu / admin123</p>
-                <p>Faculty: faculty@college.edu / faculty123</p>
-                <p>Student: student@college.edu / student123</p>
-            </div>
-        </div>
-    </div>
+    <!-- Login is now a separate page: / -->
 
     <!-- Dashboard -->
     <div id="dashboardPage" class="dashboard">
@@ -856,6 +724,37 @@
     </div>
 
     <script>
+        // If token is present in URL (fallback from login), store it to localStorage
+        (function() {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const tokenParam = params.get('token');
+                const roleParam = params.get('role');
+                if (tokenParam) {
+                    localStorage.setItem('authToken', tokenParam);
+                    if (roleParam) localStorage.setItem('userRole', roleParam);
+                    // remove params from URL without reloading
+                    const cleanUrl = window.location.origin + window.location.pathname;
+                    window.history.replaceState({}, document.title, cleanUrl);
+                }
+            } catch (e) {
+                // ignore
+            }
+        })();
+
+        // Redirect to login if no token
+        const savedToken = localStorage.getItem('authToken');
+        if (!savedToken) {
+            // not logged in, go to login page
+            window.location = '/';
+        } else {
+            // attach token to fetches via authToken variable
+            authToken = savedToken;
+            currentUserRole = localStorage.getItem('userRole') || '';
+            applyRoleVisibility();
+            loadDashboardData();
+            document.getElementById('loginPage')?.remove?.();
+        }
         const API_URL = 'http://localhost:5000/api';
         let allStudents = [];
         let allPrograms = [];
