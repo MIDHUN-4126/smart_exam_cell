@@ -63,7 +63,3 @@ If you need help creating the remote repo or want me to prepare a GitHub Actions
 - This project uses MySQL — ensure a MySQL server is running and `DB_CONFIG` in `app.py` matches your connection details.
 - The frontend uses the backend endpoints; make sure CORS and host/port are correct when serving from another host.
 
----
-If you want, I can:
-- Attempt to run git commands here if you install Git in the environment, or
-- Help you create a GitHub repo and push using a provided remote URL (I will not ask for secrets; you'll run the final push locally).
